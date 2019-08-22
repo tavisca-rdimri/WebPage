@@ -1,65 +1,142 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<img src="C:\Users\rdimri\source\repos\WebPage\marvel.jpg" width=140px height=200px>
-		<style>
-			ul {
-					list-style-type: none;
-					margin: 0;
+<head>
+<style>
+.item1 { grid-area: header; 
+         
+        }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main;
+	height: 340px;
+        
+         }
+.item4 { grid-area: footer; }
+.item5 {grid-area: left;}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {background-color: black;
+color: white;}
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'left header header header header header'
+    'menu main main main main main'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.myul {
+  list-style-type: none;
+	margin: 0;
 					padding: 0;
-					width: 10%;
-					background-color: #f1f1f1;
+					width: 18%;
+					background-color: black;
 					position: fixed;
-					height: 50%;
+					height: 70%;
 					overflow: auto;
-				}
-			li a {
-					display: block;
-					color: #000;
+}
+.footul{
+  list-style-type: none;
+	margin: 0;
+					padding: 0;
+					width: 80%;
+					background-color: black;
+					position: fixed;
+					height: 10%;
+					overflow: auto;
+}
+
+.Nav{
+          display: block;
+					color: white;
 					padding: 8px 16px;
 					text-decoration: none;
 					text-align: center;
+}
+.foot a{
+          
+					color: #000;
+          color:white;
+					text-decoration: none;
 					
-				 }
-			
-			li a.active {
-							background-color: #4CAF50;
+}
+.foot a.active{
+              background-color: #4CAF50;
 							color: white;
-						}
+}
 
-			li a:hover:not(.active) {
-										background-color: #555;
-										color: white;
-									}
-
-		</style>
-	</head>
-	<body>
-
-		<ul>
-			<li><a href="Home.html">To Do</a></li>
-			<li><a href="user.html">User</a></li>
-			<li><a href="login.html">Login</a></li>
-			<li><a href="aboutUs.html">About us</a></li>
-			<li><a href="contactUs.html">Contact us</a></li>
+.foot a:hover:not(.active){
+  background-color: greenyellow;
+										color:black;
+}
+.Nav a {
+          display: block;
+					color:white;
+					padding: 8px 16px;
+					text-decoration: none;
+					text-align: center;
+}	   
+.Nav a.active{
+  background-color: #4CAF50;
+							color: white;
+}
+.Nav a:hover:not(.active){
+  background-color: greenyellow;
+										color:black;
+}
+									
+</style>
+</head>
+<body>
+<div class="grid-container">
+  <div class="item5" style="	background-color: black;">
+      <img src="toDo.png" width="100px" height="100px">
+    </div>
+  <div class="item1" style="	background-color: black;">
+      
+  <p style="color: rgb(117, 162, 221);"><b>To Do List</b></p></div>
+  <div class="item2">
+  <ul class="myul">
+			<li class="Nav"><a href="Home.html" >To Do</a></li>
+			<li class="Nav"><a href="user.html" >User</a></li>
+			<li class="Nav"><a href="login.html">Login</a></li>
 		</ul>
-		<form style="margin-left: 200px;">
-			Search:<br>
-			<input type="text" name="User name">
-			<button type="button">Search/Add</button><br>
-		</form>
-		<table align="right" border="5">
-			<tr>
-			<th>Task</th>
-			<th>Action</th>
-			</tr>
-			<tr>
-			<td>Assignment</td>
-			<td>Delete</td>
-			</tr>
-			<tr>
-			<td>Code jam</td>
-			<td>Delete</td>
-			</tr>
-		</table>
-	</body>
+  </div>
+  <div class="item3">
+        <form >
+                Search:<br>
+                <input type="text" name="User name">
+                <button type="submit" class="button button1">Search/Add</button><br>
+            </form>
+  </div>  
+  <div class="item4">
+  <ul class="footul">
+		<li class="foot" style="display:inline;"><a href="home.html">Home</a> | </li>
+		<li class="foot" style="display:inline;"><a href="contactUs.html">Contact  </a> | </li>
+		<li class="foot" style="display:inline;"><a href="aboutUs.html">About  </a> | </li>
+</ul></div>
+</div>
+
+</body>
 </html>
